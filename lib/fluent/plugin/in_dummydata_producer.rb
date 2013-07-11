@@ -67,10 +67,10 @@ module Fluent
         rate_count = 0
 
         while @running && rate_count < @rate && Fluent::Engine.now == current_time
-          batch_count.times do
+          batch_num.times do
             Fluent::Engine.emit(@tag, Fluent::Engine.now, generate())
           end
-          rate_count += batch_count
+          rate_count += batch_num
           sleep 0.1
         end
         # wait for next second

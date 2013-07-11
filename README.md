@@ -1,29 +1,45 @@
-# Fluent::Plugin::Dummydata::Producer
+# fluent-plugin-dummydata-producer
 
-TODO: Write a gem description
+## DummyDataProducerInput
 
-## Installation
+Fluentd plugin to produce/generate dummy data and emits these data into Fluentd.
 
-Add this line to your application's Gemfile:
+## Configuration
 
-    gem 'fluent-plugin-dummydata-producer'
+Configuration to emit dummy data with 3 variation:
 
-And then execute:
+    <source>
+      type dummydata_producer
+      tag  dummy.data
+      rate 500        # messages per second
+      dummydata0   {"type":"sample","code":50,"format":"json string allowed"}
+      dummydata1   {"message":"other format needed?"}
+      dummydata2   {"comment":"N of dummydataN is number and not limited"}
+    </source>
 
-    $ bundle
+With this configuration, this plugin emits about 500 messages in 1 second (0 -> 1 -> 2 -> 0 -> ...).
 
-Or install it yourself as:
+If you need message id for acknowledgement tests, incremental id feature available.
 
-    $ gem install fluent-plugin-dummydata-producer
+    <source>
+      type dummydata_producer
+      tag  dummy.data
+      rate 500        # messages per second
+      
+      dummydata0   {"type":"sample","code":50,"format":"json string allowed"}
+      dummydata1   {"message":"other format needed?"}
+      dummydata2   {"comment":"N of dummydataN is number and not limited"}
+      
+      auto_increment_key id
+    </source>
 
-## Usage
+## TODO
 
-TODO: Write usage instructions here
+* patches welcome!
 
-## Contributing
+## Copyright
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+* Copyright
+  * Copyright (c) 2013- TAGOMORI Satoshi (tagomoris)
+* License
+  * Apache License, Version 2.0
