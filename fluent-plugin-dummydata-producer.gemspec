@@ -1,7 +1,7 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name          = "fluent-plugin-dummydata-producer"
+  spec.name          = "fluentd-plugin-dummydata-producer"
   spec.version       = "0.0.1"
   spec.authors       = ["TAGOMORI Satoshi"]
   spec.email         = ["tagomoris@gmail.com"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "fluentd"
+  spec.add_runtime_dependency "fluentd"#, ['~> 0.11.0']
   spec.add_runtime_dependency "fluent-mixin-config-placeholders"
 
   spec.add_development_dependency "bundler", "~> 1.3"
