@@ -1,4 +1,4 @@
-# fluent-plugin-dummydata-producer
+# fluent-plugin-dummydata-producer, a plugin for [Fluentd](http://fluentd.org)
 
 ## DummyDataProducerInput
 
