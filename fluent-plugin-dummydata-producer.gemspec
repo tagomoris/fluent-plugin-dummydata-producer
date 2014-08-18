@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-dummydata-producer"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.3"
   spec.authors       = ["TAGOMORI Satoshi"]
   spec.email         = ["tagomoris@gmail.com"]
   spec.description   = %q{Emits dummy data to do bench marks and other tests}
@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "fluentd"
-  spec.add_runtime_dependency "fluent-mixin-config-placeholders"
+  spec.add_runtime_dependency "fluent-mixin-config-placeholders", ">= 0.3.0"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
